@@ -13,6 +13,19 @@ app_license = "MIT"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/prac2/css/prac2.css"
 # app_include_js = "/assets/prac2/js/prac2.js"
+# include DataTable assets
+# app_include_js = [
+#     "assets/frappe/js/frappe/form/controls/data_table.js",
+#     "assets/frappe/js/frappe/form/controls/filter.js",
+#     "assets/frappe/js/frappe/form/controls/list_filter.js",
+#     "assets/frappe/js/lib/bootstrap-datepicker.min.js",
+#     "assets/frappe/js/lib/daterangepicker.min.js",
+#     "assets/frappe/js/lib/jquery.ui.slider.min.js",
+#     "assets/frappe/js/lib/numeral.min.js",
+#     "assets/frappe/js/lib/Chart.min.js",
+#     "assets/frappe/js/lib/underscore.js",
+#     "assets/frappe/js/frappe/form/dashboard.js",
+# ]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/prac2/css/prac2.css"
