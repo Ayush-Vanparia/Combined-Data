@@ -1,0 +1,20 @@
+.main-row{
+    margin-top: 5rem;
+}
+.from-col
+{
+    width: 40%;
+}
+#from-date{
+    width: 40%;
+    margin-left: 68%;
+    padding: 0;
+}
+.to-col{
+    padding: 0;
+}
+#to-date{
+    width: 40%;
+    margin-left: 78%;
+    padding: 0;
+}
