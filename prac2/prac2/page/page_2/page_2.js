@@ -16,7 +16,6 @@ function getPurchaseOrders(startDate, endDate) {
         }
     });
 }
-//             rows += '<tr><td>' + (d.name ? d.name : '') + '</td><td>' + (d.supplier ? d.supplier : '') + '</td><td>' + (d.supplier_name ? d.supplier_name : '') + '</td><td>' + (d.transaction_date ? d.transaction_date : '') + '</td><td>' + (d.shedule_date ? d.shedule_date : '') + '</td><td>' + (d.company ? d.company : '') + '</td><td>' + (d.buying_price_list ? d.buying_price_list : '') + '</td><td>' + (d.price_list_currency ? d.price_list_currency : '') + '</td><td>' + (d.total_qty ? d.total_qty : '') + '</td><td>' + (d.total ? d.total : '') + '</td></tr>';
 
 // =================================================Getting Sales Order Data===============================================================
 function getSalesOrders(startDate, endDate) {
