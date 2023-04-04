@@ -160,7 +160,6 @@ var po_table = $('<table class="table table-bordered" id="po-table">\
 );
 // ================================================================Card Attendance ========================================================
 
-// employee, employee_name, card_status, card_working_hours, attendance_date, company, department, shift, in_time, out_time
 
 var ca = $('<h3 class="mt-5 text-center ">HR</h3>')
 
@@ -184,7 +183,6 @@ var ca_table = $('<table class="table table-bordered" id="ca-table">\
 	</table>');
 
 // ===================================================Stock Entry Table===================================================================
-// name, posting_date, posting_time, stock_entry_type, company, shift_type, from_warehouse, to_warehouse, total_qty, total_outgoing_value, total_incoming_value
 
 var stock_entry = $('<h3 class="mt-5 text-center">Stock Entry</h3>')
 var st_table = $('<table class="table table-bordered" id="st-table">\
@@ -200,7 +198,6 @@ var st_table = $('<table class="table table-bordered" id="st-table">\
 				<th> To Warehouse </th>\
 				<th>Total QTY</th>\
                 <th>Total Outgoing Value</th>\
-                <th>Total Incoming Value</th>\
 				</tr>\
         </thead>\
         <tbody>\
@@ -227,6 +224,9 @@ var st_table = $('<table class="table table-bordered" id="st-table">\
 		
 		wrapper.page.set_primary_action('Print', function() {
 
+			
+			
+			
 			window.print()
 				// var printWindow = window.open('', '', 'height=500,width=800');
 				// printWindow.document.write('<html><head>');
@@ -259,8 +259,13 @@ var st_table = $('<table class="table table-bordered" id="st-table">\
 		});
 
 
-	    // $('.page-actions').hide();
-		// $('.page-title').remove();
+		wrapper.page.set_primary_action('Print', function() {
+			var style = document.createElement('style');
+			style.textContent = '@media print { div.container.page-body{ padding: 0; margin-left: 3.3rem;}}';
+			document.head.appendChild(style);
+			window.print();
+		  });
+	    
 
 	};
 	

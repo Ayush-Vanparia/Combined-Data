@@ -34,4 +34,3 @@ def get_card_attendance(start_date, end_date):
     """, (start_date, end_date), as_dict=True)
 
 
-# 'name', 'supplier', 'supplier_name', 'transaction_date', 'schedule_date', 'company', 'buying_price_list', 'price_list_currency', 'set_from_warehouse', 'total_qty']
