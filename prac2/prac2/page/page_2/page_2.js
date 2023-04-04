@@ -167,7 +167,7 @@ var ca_table = $('<table class="table table-bordered" id="ca-table">\
 		<thead>\
 		<tr>\
 		<th>Employee</th>\
-		<th>Emplpyee Name</th>\
+		<th>Employee Name</th>\
 		<th>Card Status</th>\
 		<th>Card Working Hours</th>\
 		<th>Attendance Date</th>\
