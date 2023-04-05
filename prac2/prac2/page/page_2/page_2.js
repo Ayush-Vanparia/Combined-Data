@@ -222,46 +222,46 @@ var st_table = $('<table class="table table-bordered" id="st-table">\
 			getCarddAttendance(startDate,endDate);
 		});
 		
-		wrapper.page.set_primary_action('Print', function() {
+		// wrapper.page.set_primary_action('Print', function() {
 
 			
 			
 			
-			window.print()
-				// var printWindow = window.open('', '', 'height=500,width=800');
-				// printWindow.document.write('<html><head>');
-				// printWindow.document.write('</head><body><div >');
-				// printWindow.document.write('<h3 class="mt-5" style="text-align: center">Purchase Order</h3>');
-				// printWindow.document.write('<table class="table" style="border: 1px solid black">');
-				// printWindow.document.write($('#po-table').html());
-				// printWindow.document.write('</table></div></body></html>');
+		// 	window.print()
+		// 		// var printWindow = window.open('', '', 'height=500,width=800');
+		// 		// printWindow.document.write('<html><head>');
+		// 		// printWindow.document.write('</head><body><div >');
+		// 		// printWindow.document.write('<h3 class="mt-5" style="text-align: center">Purchase Order</h3>');
+		// 		// printWindow.document.write('<table class="table" style="border: 1px solid black">');
+		// 		// printWindow.document.write($('#po-table').html());
+		// 		// printWindow.document.write('</table></div></body></html>');
 				
-				// printWindow.document.write('<br><br>');
+		// 		// printWindow.document.write('<br><br>');
 
-				// // printWindow.document.write('<html><head><title>Sales Order Table</title>');
-				// // printWindow.document.write('</head><body>');
-				// // printWindow.document.write('<h3 class="mt-5 text-center ">Sales Order</h3>');
-				// // printWindow.document.write('<table class="table" style="border:1px solid black">');
-				// // printWindow.document.write($('#so-table').html());
-				// // printWindow.document.write('</table></body></html>');
+		// 		// // printWindow.document.write('<html><head><title>Sales Order Table</title>');
+		// 		// // printWindow.document.write('</head><body>');
+		// 		// // printWindow.document.write('<h3 class="mt-5 text-center ">Sales Order</h3>');
+		// 		// // printWindow.document.write('<table class="table" style="border:1px solid black">');
+		// 		// // printWindow.document.write($('#so-table').html());
+		// 		// // printWindow.document.write('</table></body></html>');
 				
-				// // printWindow.document.write('<br><br>');
+		// 		// // printWindow.document.write('<br><br>');
 				
-				// // printWindow.document.write('<html><head><title>Card Attendance</title>');
-				// // printWindow.document.write('</head><body>');
-				// // printWindow.document.write('<h3 class="mt-5">Card Attendance</h3>');
-				// // printWindow.document.write('<table class="table">');
-				// // printWindow.document.write($('#ca-table').html());
-				// // printWindow.document.write('</table></body></html>');
-				// printWindow.document.close();
-				// printWindow.print();
+		// 		// // printWindow.document.write('<html><head><title>Card Attendance</title>');
+		// 		// // printWindow.document.write('</head><body>');
+		// 		// // printWindow.document.write('<h3 class="mt-5">Card Attendance</h3>');
+		// 		// // printWindow.document.write('<table class="table">');
+		// 		// // printWindow.document.write($('#ca-table').html());
+		// 		// // printWindow.document.write('</table></body></html>');
+		// 		// printWindow.document.close();
+		// 		// printWindow.print();
 			
-		});
+		// });
 
 
 		wrapper.page.set_primary_action('Print', function() {
 			var style = document.createElement('style');
-			style.textContent = '@media print { div.container.page-body{ padding: 0; margin-left: 3.3rem;}}';
+			style.textContent = '@media print { div.container.page-body{ padding: 0; margin-left: 3.3rem;} .page-head{display:none;}}';
 			document.head.appendChild(style);
 			window.print();
 		  });
