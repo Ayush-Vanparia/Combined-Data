@@ -37,23 +37,23 @@ function getSalesOrders(startDate, endDate) {
 }
 // ==================================================Getting Card Attendance details========================================================
 
-function getCarddAttendance(startDate, endDate) {
-    frappe.call({
-        method: 'prac2.prac2.page.page_2.page_2.get_card_attendance',
-        args: {
-            start_date: startDate,
-            end_date: endDate
-        },
-        callback: function(data) {
-            var rows = '';
-            $.each(data.message, function(i, d) {
-				rows += '<tr><td>' + (d.employee ? d.employee : '') + '</td><td>' + (d.employee_name ? d.employee_name : '') + '</td><td>' + (d.card_status ? d.card_status : '') + '</td><td>' + (d.card_working_hours ? d.card_working_hours : '') + '</td><td>' + (d.attendance_date ? d.attendance_date : '') + '</td><td>' + (d.company ? d.company : '') + '</td><td>' + (d.department ? d.department : '') + '</td><td>' + (d.shift ? d.shift : '') + '</td><td>' + (d.in_time ? d.in_time : '') + '</td><td>' + (d.out_time ? d.out_time : '') + '</td></tr>';
+// function getCarddAttendance(startDate, endDate) {
+//     frappe.call({
+//         method: 'prac2.prac2.page.page_2.page_2.get_card_attendance',
+//         args: {
+//             start_date: startDate,
+//             end_date: endDate
+//         },
+//         callback: function(data) {
+//             var rows = '';
+//             $.each(data.message, function(i, d) {
+// 				rows += '<tr><td>' + (d.employee ? d.employee : '') + '</td><td>' + (d.employee_name ? d.employee_name : '') + '</td><td>' + (d.card_status ? d.card_status : '') + '</td><td>' + (d.card_working_hours ? d.card_working_hours : '') + '</td><td>' + (d.attendance_date ? d.attendance_date : '') + '</td><td>' + (d.company ? d.company : '') + '</td><td>' + (d.department ? d.department : '') + '</td><td>' + (d.shift ? d.shift : '') + '</td><td>' + (d.in_time ? d.in_time : '') + '</td><td>' + (d.out_time ? d.out_time : '') + '</td></tr>';
 
-            });
-            $('#ca-table tbody').html(rows);
-        }
-    });
-}
+//             });
+//             $('#ca-table tbody').html(rows);
+//         }
+//     });
+// }
 
 
 
@@ -161,26 +161,26 @@ var po_table = $('<table class="table table-bordered" id="po-table">\
 // ================================================================Card Attendance ========================================================
 
 
-var ca = $('<h3 class="mt-5 text-center ">HR</h3>')
+// var ca = $('<h3 class="mt-5 text-center ">HR</h3>')
 
-var ca_table = $('<table class="table table-bordered" id="ca-table">\
-		<thead>\
-		<tr>\
-		<th>Employee</th>\
-		<th>Employee Name</th>\
-		<th>Card Status</th>\
-		<th>Card Working Hours</th>\
-		<th>Attendance Date</th>\
-		<th>Company</th>\
-		<th>Department</th>\
-		<th>Shift</th>\
-		<th>in_time</th>\
-		<th>out_time</th>\
-			</tr>\
-		</thead>\
-		<tbody>\
-		</tbody>\
-	</table>');
+// var ca_table = $('<table class="table table-bordered" id="ca-table">\
+// 		<thead>\
+// 		<tr>\
+// 		<th>Employee</th>\
+// 		<th>Employee Name</th>\
+// 		<th>Card Status</th>\
+// 		<th>Card Working Hours</th>\
+// 		<th>Attendance Date</th>\
+// 		<th>Company</th>\
+// 		<th>Department</th>\
+// 		<th>Shift</th>\
+// 		<th>in_time</th>\
+// 		<th>out_time</th>\
+// 			</tr>\
+// 		</thead>\
+// 		<tbody>\
+// 		</tbody>\
+// 	</table>');
 
 // ===================================================Stock Entry Table===================================================================
 
@@ -208,7 +208,7 @@ var st_table = $('<table class="table table-bordered" id="st-table">\
 // ===================================================Adding tables to page================================================================
 		
 		
-		page.main.append(filters, po, po_table, so, so_table,ca, ca_table, stock_entry, st_table);
+		page.main.append(filters, po, po_table, so, so_table, stock_entry, st_table);
 		
 //======================================================= Filtering Dates==================================================================
 	
@@ -222,43 +222,8 @@ var st_table = $('<table class="table table-bordered" id="st-table">\
 			getCarddAttendance(startDate,endDate);
 		});
 		
-		// wrapper.page.set_primary_action('Print', function() {
 
-			
-			
-			
-		// 	window.print()
-		// 		// var printWindow = window.open('', '', 'height=500,width=800');
-		// 		// printWindow.document.write('<html><head>');
-		// 		// printWindow.document.write('</head><body><div >');
-		// 		// printWindow.document.write('<h3 class="mt-5" style="text-align: center">Purchase Order</h3>');
-		// 		// printWindow.document.write('<table class="table" style="border: 1px solid black">');
-		// 		// printWindow.document.write($('#po-table').html());
-		// 		// printWindow.document.write('</table></div></body></html>');
-				
-		// 		// printWindow.document.write('<br><br>');
-
-		// 		// // printWindow.document.write('<html><head><title>Sales Order Table</title>');
-		// 		// // printWindow.document.write('</head><body>');
-		// 		// // printWindow.document.write('<h3 class="mt-5 text-center ">Sales Order</h3>');
-		// 		// // printWindow.document.write('<table class="table" style="border:1px solid black">');
-		// 		// // printWindow.document.write($('#so-table').html());
-		// 		// // printWindow.document.write('</table></body></html>');
-				
-		// 		// // printWindow.document.write('<br><br>');
-				
-		// 		// // printWindow.document.write('<html><head><title>Card Attendance</title>');
-		// 		// // printWindow.document.write('</head><body>');
-		// 		// // printWindow.document.write('<h3 class="mt-5">Card Attendance</h3>');
-		// 		// // printWindow.document.write('<table class="table">');
-		// 		// // printWindow.document.write($('#ca-table').html());
-		// 		// // printWindow.document.write('</table></body></html>');
-		// 		// printWindow.document.close();
-		// 		// printWindow.print();
-			
-		// });
-
-
+//	=======================================================Print Page=========================================================================
 		wrapper.page.set_primary_action('Print', function() {
 			var style = document.createElement('style');
 			style.textContent = '@media print { div.container.page-body{ padding: 0; margin-left: 3.3rem;} .page-head{display:none;}}';
@@ -268,6 +233,19 @@ var st_table = $('<table class="table table-bordered" id="st-table">\
 	    
 
 	};
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	//   // Fetch data on page load with default dates
 	//   var startDate = moment().subtract(7, 'days').format('YYYY-MM-DD');
